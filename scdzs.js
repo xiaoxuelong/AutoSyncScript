@@ -1,5 +1,7 @@
-*/
 
-body = $response.body.replace(/isVip":\w+/g, 'isVip":1').replace(/vipEndTime":\w+/g, ' vipEndTime ": 2209017600000 ');$done({body});
-	
+let obj = JSON.parse($response.body);
+obj.data.allowItem = 1;
+obj.data.isvip = 1;
+obj.data.vip_endtime = 2841763419;
+obj.data.isPrinta = 0;
 $done({body: JSON.stringify(obj)});
